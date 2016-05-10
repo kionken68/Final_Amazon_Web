@@ -45,7 +45,7 @@ stream.on('error',function(err){
   console.log(err);
 });
 
-router.post('product/:product_id',function(req,res,next){
+router.post('/product/:product_id',function(req,res,next){
   Cart.findOne({owner:req.user._id},function(err,cart){
     cart.items.push({
       item:req.body.product_id,
